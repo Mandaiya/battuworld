@@ -92,10 +92,12 @@ HELP_11 = """🖇️**<u>Gᴇᴛ Sᴛᴀʀᴛᴇᴅ Wɪᴛʜ Bᴏᴛ</u>**
 » /settings ~ Sʜᴏᴡs ᴛʜᴇ ɢʀᴏᴜᴩ sᴇᴛᴛɪɴɢs ᴡɪᴛʜ ᴀɴ ɪɴᴛᴇʀᴀᴄᴛɪᴠᴇ ɪɴʟɪɴᴇ ᴍᴇɴᴜ.
 » /sudolist ~ Sʜᴏᴡs ᴛʜᴇ sᴜᴅᴏ ᴜsᴇʀs ᴏғ ʙᴏᴛ."""
 
-HELP_15 = """☘️ **<u>Gʙᴀɴ ғᴇᴀᴛᴜʀᴇ</u>** [ Sᴜᴅᴏ Oɴʟʏ ] :
+HELP_12 = """☘️ **<u>Gʙᴀɴ ғᴇᴀᴛᴜʀᴇ</u>** [ Sᴜᴅᴏ Oɴʟʏ ] :
 » /gban @Username & Reply To User ~ Gʟᴏʙᴀʟʟʏ ʙᴀɴs ᴛʜᴇ ᴄʜᴜᴛɪʏᴀ ғʀᴏᴍ ᴀʟʟ ᴛʜᴇ sᴇʀᴠᴇᴅ ᴄʜᴀᴛs ᴀɴᴅ ʙʟᴀᴄᴋʟɪsᴛ ʜɪᴍ ғʀᴏᴍ ᴜsɪɴɢ ᴛʜᴇ ʙᴏᴛ.
 » /ungban @Username & Reply To User ~ Gʟᴏʙᴀʟʟʏ ᴜɴʙᴀɴs ᴛʜᴇ ɢʟᴏʙᴀʟʟʏ ʙᴀɴɴᴇᴅ ᴜsᴇʀ.
 » /gbannedusers ~ Sʜᴏᴡs ᴛʜᴇ ʟɪsᴛ ᴏғ ɢʟᴏʙᴀʟʟʏ ʙᴀɴɴᴇʀ ᴜsᴇʀs."""
+
+HELP_15 = """ Puthu tagall module!!"""
 
 HELP_13 = """
 » /tags - Tag kooda random comments varum 🙈
@@ -113,3 +115,4 @@ Tagall stop pandra commands:
 » /tagme - /break 
 
 » /tagu - /delete"""
+
