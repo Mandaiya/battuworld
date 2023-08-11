@@ -107,23 +107,33 @@ def private_help_panel(_):
     ]
     return buttons
 
-def tagall_markup(_):
-    buttons = [
+def tagall_markup(_, START: Union[bool, int] = None):
+    first = [InlineKeyboardButton(text=_["CLOSEMENU_BUTTON"], callback_data=f"close")]
+    second = [
+        InlineKeyboardButton(
+            text=_["BACK_BUTTON"],
+            callback_data=f"settingsback_helper",
+        ),
+    ]
+    mark = second if START else first
+    oii = InlineKeyboardMarkup(
         [
-            InlineKeyboardButton(
-                text="Start cmd",
-                callback_data="tagall_callback ta1",
-            ),
-            InlineKeyboardButton(
-                text="Stop cmd",
-                callback_data="tagall_callback ta2",
-            )
-        ]
-        [
-            InlineKeyboardButton(
+            [
+                InlineKeyboardButton(
+                    text="Start cmd",
+                    callback_data="tagall_callback ta1",
+                ),
+                InlineKeyboardButton(
+                    text="Stop cmd",
+                    callback_data="tagall_callback ta2",
+                )
+            ],
+            [
+                InlineKeyboardButton(
                     text=_["BACK_BUTTON"],
                     callback_data=f"settings_back_helper",
-            ),
+                ),
+            ],
         ]
-    ]
-    return buttons
+    )
+    return oii
