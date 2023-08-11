@@ -110,3 +110,12 @@ async def helper_cb(client, CallbackQuery, _):
         await CallbackQuery.edit_message_text(helpers.HELP_13, reply_markup=keyboard)
     elif cb == "ta2":
         await CallbackQuery.edit_message_text(helpers.HELP_14, reply_markup=keyboard)
+
+@app.on_callback_query(filters.regex("tagall_back_helper") & ~BANNED_USERS)
+@languageCB
+async def helper_cb(client, CallbackQuery, _):
+    #callback_data = CallbackQuery.data.strip()
+    #cb = callback_data.split(None, 1)[1]
+    keyy = tagall_markup(_)    
+    await CallbackQuery.edit_message_text(helpers.HELP_15, reply_markup=keyy)
+   
