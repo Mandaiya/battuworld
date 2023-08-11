@@ -73,7 +73,7 @@ def help_pannel(_, START: Union[bool, int] = None):
             [
                 InlineKeyboardButton(
                     text="TAGALL",
-                    callback_data="help_callback hb13",
+                    callback_data="help_callback hb15",
                 ),
             ],
             mark,
@@ -112,12 +112,18 @@ def tagall_markup(_):
         [
             InlineKeyboardButton(
                 text="Start cmd",
-                callback_data="start_tagall",
+                callback_data="tagall_callback ta1",
             ),
             InlineKeyboardButton(
                 text="Stop cmd",
-                callback_data="stop_tagall",
+                callback_data="tagall_callback ta2",
             )
+        ]
+        [
+            InlineKeyboardButton(
+                    text=_["BACK_BUTTON"],
+                    callback_data=f"settings_back_helper",
+            ),
         ]
     ]
     return buttons
