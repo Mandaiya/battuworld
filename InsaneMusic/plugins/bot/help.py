@@ -10,7 +10,7 @@ from InsaneMusic.misc import SUDOERS
 from InsaneMusic.utils import help_pannel
 from InsaneMusic.utils.database import get_lang, is_commanddelete_on
 from InsaneMusic.utils.decorators.language import LanguageStart, languageCB
-from InsaneMusic.utils.inline.help import help_back_markup, private_help_panel, tagall_markup
+from InsaneMusic.utils.inline.help import help_back_markup, private_help_panel, tagall_markup, tagalluh_markup
 
 ### Command
 HELP_COMMAND = get_command("HELP_COMMAND")
