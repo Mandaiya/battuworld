@@ -62,6 +62,7 @@ async def helper_cb(client, CallbackQuery, _):
     cb = callback_data.split(None, 1)[1]
     keyboard = help_back_markup(_)
     keyy = tagall_markup(_)
+    neww = tagalluh_markup(_)
     if cb == "hb9":
         if CallbackQuery.from_user.id not in SUDOERS:
             return await CallbackQuery.answer(
@@ -94,9 +95,9 @@ async def helper_cb(client, CallbackQuery, _):
     elif cb == "hb10":
         await CallbackQuery.edit_message_text(helpers.HELP_10, reply_markup=keyboard)
     elif cb == "hb11":
-        await CallbackQuery.edit_message_text(helpers.HELP_11, reply_markup=keyboard)
+        await CallbackQuery.edit_message_text(helpers.HELP_11, reply_markup=neww)
     elif cb == "hb12":
-        await CallbackQuery.edit_message_text(helpers.HELP_12, reply_markup=keyboard)
+        await CallbackQuery.edit_message_text(helpers.HELP_12, reply_markup=neww)
     elif cb == "hb15":
         await CallbackQuery.edit_message_text(helpers.HELP_15, reply_markup=keyy)
     
