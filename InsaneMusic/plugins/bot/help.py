@@ -61,8 +61,7 @@ async def helper_cb(client, CallbackQuery, _):
     callback_data = CallbackQuery.data.strip()
     cb = callback_data.split(None, 1)[1]
     keyboard = help_back_markup(_)
-    keyy = tagall_markup(_)
-    neww = tagalluh_markup(_)
+    keyy = tagall_markup(_)    
     if cb == "hb9":
         if CallbackQuery.from_user.id not in SUDOERS:
             return await CallbackQuery.answer(
@@ -95,9 +94,9 @@ async def helper_cb(client, CallbackQuery, _):
     elif cb == "hb10":
         await CallbackQuery.edit_message_text(helpers.HELP_10, reply_markup=keyboard)
     elif cb == "hb11":
-        await CallbackQuery.edit_message_text(helpers.HELP_11, reply_markup=neww)
+        await CallbackQuery.edit_message_text(helpers.HELP_11, reply_markup=keyboard)
     elif cb == "hb12":
-        await CallbackQuery.edit_message_text(helpers.HELP_12, reply_markup=neww)
+        await CallbackQuery.edit_message_text(helpers.HELP_12, reply_markup=keyboard)
     elif cb == "hb15":
         await CallbackQuery.edit_message_text(helpers.HELP_15, reply_markup=keyy)
     
@@ -107,10 +106,11 @@ async def helper_cb(client, CallbackQuery, _):
     callback_data = CallbackQuery.data.strip()
     cb = callback_data.split(None, 1)[1]
     keyboard = help_back_markup(_)
+    neww = tagalluh_markup(_)
     if cb == "ta1":
-        await CallbackQuery.edit_message_text(helpers.HELP_13, reply_markup=keyboard)
+        await CallbackQuery.edit_message_text(helpers.HELP_13, reply_markup=neww)
     elif cb == "ta2":
-        await CallbackQuery.edit_message_text(helpers.HELP_14, reply_markup=keyboard)
+        await CallbackQuery.edit_message_text(helpers.HELP_14, reply_markup=neww)
 
 @app.on_callback_query(filters.regex("tagall_back_helper") & ~BANNED_USERS)
 @languageCB
