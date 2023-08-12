@@ -107,15 +107,7 @@ def private_help_panel(_):
     ]
     return buttons
 
-def tagall_markup(_, START: Union[bool, int] = None):
-    first = [InlineKeyboardButton(text=_["CLOSEMENU_BUTTON"], callback_data=f"close")]
-    second = [
-        InlineKeyboardButton(
-            text=_["BACK_BUTTON"],
-            callback_data=f"settingsback_helper",
-        ),
-    ]
-    mark = second if START else first
+def tagall_markup(_, START: Union[bool, int] = None):    
     oii = InlineKeyboardMarkup(
         [
             [
@@ -137,3 +129,16 @@ def tagall_markup(_, START: Union[bool, int] = None):
         ]
     )
     return oii
+
+def tagalluh_markup(_, START: Union[bool, int] = None):
+    hey = InlineKeyboardMarkup(
+        [
+            [
+                InlineKeyboardButton(
+                text=_["BACK_BUTTON"],
+                callback_data="tagall_back_helper"
+                )
+            ]
+        ]
+    )
+    return hey
