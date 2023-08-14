@@ -10,7 +10,7 @@ from InsaneMusic.misc import SUDOERS
 from InsaneMusic.utils import help_pannel
 from InsaneMusic.utils.database import get_lang, is_commanddelete_on
 from InsaneMusic.utils.decorators.language import LanguageStart, languageCB
-from InsaneMusic.utils.inline.help import help_back_markup, private_help_panel
+from InsaneMusic.utils.inline.help import help_back_markup, private_help_panel, tagall_markup, tagalluh_markup
 
 ### Command
 HELP_COMMAND = get_command("HELP_COMMAND")
@@ -52,7 +52,7 @@ async def helper_private(
 @LanguageStart
 async def help_com_group(client, message: Message, _):
     keyboard = private_help_panel(_)
-    await message.reply_text(_["help_2"], reply_markup=InlineKeyboardMarkup(keyboard))
+    await message.reply_text(_["help_2"], reply_markup=InlineKeyboardMarkup(keyboard))    
 
 
 @app.on_callback_query(filters.regex("help_callback") & ~BANNED_USERS)
@@ -61,6 +61,7 @@ async def helper_cb(client, CallbackQuery, _):
     callback_data = CallbackQuery.data.strip()
     cb = callback_data.split(None, 1)[1]
     keyboard = help_back_markup(_)
+    keyy = tagall_markup(_)    
     if cb == "hb9":
         if CallbackQuery.from_user.id not in SUDOERS:
             return await CallbackQuery.answer(
@@ -96,3 +97,26 @@ async def helper_cb(client, CallbackQuery, _):
         await CallbackQuery.edit_message_text(helpers.HELP_11, reply_markup=keyboard)
     elif cb == "hb12":
         await CallbackQuery.edit_message_text(helpers.HELP_12, reply_markup=keyboard)
+    elif cb == "hb15":
+        await CallbackQuery.edit_message_text(helpers.HELP_15, reply_markup=keyy)
+    
+@app.on_callback_query(filters.regex("tagall_callback") & ~BANNED_USERS)
+@languageCB
+async def helper_cb(client, CallbackQuery, _):
+    callback_data = CallbackQuery.data.strip()
+    cb = callback_data.split(None, 1)[1]
+    keyboard = help_back_markup(_)
+    neww = tagalluh_markup(_)
+    if cb == "ta1":
+        await CallbackQuery.edit_message_text(helpers.HELP_13, reply_markup=neww)
+    elif cb == "ta2":
+        await CallbackQuery.edit_message_text(helpers.HELP_14, reply_markup=neww)
+
+@app.on_callback_query(filters.regex("tagall_back_helper") & ~BANNED_USERS)
+@languageCB
+async def helper_cb(client, CallbackQuery, _):
+    #callback_data = CallbackQuery.data.strip()
+    #cb = callback_data.split(None, 1)[1]
+    keyy = tagall_markup(_)    
+    await CallbackQuery.edit_message_text(helpers.HELP_15, reply_markup=keyy)
+   

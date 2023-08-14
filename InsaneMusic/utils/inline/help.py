@@ -70,6 +70,12 @@ def help_pannel(_, START: Union[bool, int] = None):
                     callback_data="help_callback hb9",
                 ),
             ],
+            [
+                InlineKeyboardButton(
+                    text="TAGALL",
+                    callback_data="help_callback hb15",
+                ),
+            ],
             mark,
         ]
     )
@@ -100,3 +106,39 @@ def private_help_panel(_):
         ],
     ]
     return buttons
+
+def tagall_markup(_, START: Union[bool, int] = None):    
+    oii = InlineKeyboardMarkup(
+        [
+            [
+                InlineKeyboardButton(
+                    text="Start cmd",
+                    callback_data="tagall_callback ta1",
+                ),
+                InlineKeyboardButton(
+                    text="Stop cmd",
+                    callback_data="tagall_callback ta2",
+                )
+            ],
+            [
+                InlineKeyboardButton(
+                    text=_["BACK_BUTTON"],
+                    callback_data=f"settingsback_helper",
+                ),
+            ],
+        ]
+    )
+    return oii
+
+def tagalluh_markup(_, START: Union[bool, int] = None):
+    hey = InlineKeyboardMarkup(
+        [
+            [
+                InlineKeyboardButton(
+                text=_["BACK_BUTTON"],
+                callback_data="tagall_back_helper"
+                )
+            ]
+        ]
+    )
+    return hey
